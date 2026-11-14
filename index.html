@@ -19,6 +19,7 @@
   <meta property="og:image:alt" content="AI Taught Simple: free, hands-on AI classes for older adults">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#1D5C4B">
+  <link rel="canonical" href="https://aitaughtsimple.github.io/">
 
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/icon-180.png">
@@ -200,11 +201,9 @@
         <div>
           <h2 id="host-title">Host a free class</h2>
           <p>We'd love to teach at your library, senior center, or community group. It's free. We bring the students and the lesson.</p>
-          <p>Email us a few dates that work for you, and we'll plan the rest together.</p>
+          <p>Send us a few dates that work for you, and we'll plan the rest together.</p>
           <div class="actions">
-            <a class="btn btn--light" href="mailto:aitaughtsimple@gmail.com?subject=Hosting%20a%20free%20AI%20class" data-mailto data-subject="Hosting a free AI class" data-body="Hi {team},\n\nWe'd like to host a free AI class.\n\nOrganization name:\nTown:\nGood days and times:\nAbout how many people:\nDo you have a TV or projector we can use?\n\nThank you,\n">
-              <svg aria-hidden="true"><use href="#i-mail"/></svg>Email us to host a class
-            </a>
+            <a class="btn btn--light" href="#contact" data-topic="host"><svg aria-hidden="true"><use href="#i-mail"/></svg>Request a free class</a>
           </div>
         </div>
         <div class="host-panel">
@@ -228,14 +227,16 @@
 
     <!-- 5. About us -->
     <section class="section" id="about" aria-labelledby="about-title">
-      <div class="wrap">
-        <h2 id="about-title">About us</h2>
-        <!-- PLACEHOLDER: replace this whole box with your own words, then delete the "placeholder" class. -->
-        <div class="placeholder">
-          <span class="placeholder-tag">Placeholder: rewrite in your own words</span>
-          <p>We're <span data-site="team">Jaiden and Shubh</span>, students at <span data-site="school">Glenelg High School</span> in <span data-site="area">Howard County, Maryland</span>.</p>
-          <p>[Write two or three sentences about why you started this club. For example: who in your life made you want to help, what you noticed about AI and older adults, and what you hope people walk away with.]</p>
+      <div class="wrap about">
+        <div>
+          <h2 id="about-title">About us</h2>
+          <p class="about-lede">We're <span data-site="team">Jaiden and Shubh</span>, students at <span data-site="school">Glenelg High School</span> in <span data-site="area">Howard County, Maryland</span>.</p>
+          <p>AI tools like ChatGPT can make everyday tasks easier, and scammers are starting to use AI too. We started <span data-site="name">AI Taught Simple</span> so anyone can learn both sides in a friendly, patient class: how to put these tools to work, and how to stay safe.</p>
         </div>
+        <ul class="people" aria-label="Who runs the club">
+          <li class="person"><span class="avatar" style="--c: var(--sun)" aria-hidden="true">J</span><span><strong>Jaiden</strong><span class="person-role">Student, <span data-site="school">Glenelg High School</span></span></span></li>
+          <li class="person"><span class="avatar" style="--c: var(--sky)" aria-hidden="true">S</span><span><strong>Shubh</strong><span class="person-role">Student, <span data-site="school">Glenelg High School</span></span></span></li>
+        </ul>
       </div>
     </section>
 
@@ -288,20 +289,75 @@
       <div class="wrap">
         <div class="section-head">
           <h2 id="contact-title">Contact us</h2>
-          <p>Have a question, or want to host a class? Email us.</p>
+          <p>Send us a message here. It goes straight to our inbox, and we'll reply by email.</p>
         </div>
-        <div class="contact-card">
-          <div class="contact-art" aria-hidden="true"><span class="paper paper--sun"></span><span class="paper paper--sky"></span></div>
-          <a class="email-big" href="mailto:aitaughtsimple@gmail.com" data-mailto data-site="email">aitaughtsimple@gmail.com</a>
-          <div class="actions">
-            <a class="btn btn--primary" href="mailto:aitaughtsimple@gmail.com" data-mailto data-subject="Question about AI classes">
-              <svg aria-hidden="true"><use href="#i-mail"/></svg>Email us
-            </a>
-            <button class="btn btn--secondary" type="button" data-copy-email aria-describedby="copy-status" hidden>
-              <svg aria-hidden="true"><use href="#i-copy"/></svg>Copy email address
-            </button>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-art" aria-hidden="true"><span class="paper paper--sun"></span><span class="paper paper--sky"></span></div>
+
+            <form class="contact-form" action="https://formsubmit.co/aitaughtsimple@gmail.com" method="POST" data-contact-form>
+              <input type="hidden" name="_subject" value="New message from the AI Taught Simple website">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://aitaughtsimple.github.io/thanks/">
+              <div class="hp" aria-hidden="true"><label>Leave this box empty <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+
+              <fieldset class="field">
+                <legend>What is this about?</legend>
+                <div class="choices">
+                  <label class="choice"><input type="radio" name="topic" value="I'd like to host a class"><span>I'd like to host a class</span></label>
+                  <label class="choice"><input type="radio" name="topic" value="I have a question" checked><span>I have a question</span></label>
+                  <label class="choice"><input type="radio" name="topic" value="Something else"><span>Something else</span></label>
+                </div>
+              </fieldset>
+
+              <div class="field">
+                <label for="cf-name">Your name</label>
+                <input id="cf-name" name="name" type="text" autocomplete="name" required aria-describedby="cf-name-err">
+                <p class="field-error" id="cf-name-err" hidden></p>
+              </div>
+
+              <div class="field">
+                <label for="cf-email">Your email</label>
+                <p class="field-hint" id="cf-email-hint">We'll reply to this address.</p>
+                <input id="cf-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="cf-email-hint cf-email-err">
+                <p class="field-error" id="cf-email-err" hidden></p>
+              </div>
+
+              <div class="field">
+                <label for="cf-org">Library, center, or group <span class="optional">(optional)</span></label>
+                <input id="cf-org" name="organization" type="text" autocomplete="organization">
+              </div>
+
+              <div class="field">
+                <label for="cf-msg">Your message</label>
+                <textarea id="cf-msg" name="message" rows="5" required aria-describedby="cf-msg-err"></textarea>
+                <p class="field-error" id="cf-msg-err" hidden></p>
+              </div>
+
+              <button class="btn btn--primary btn--block" type="submit"><svg aria-hidden="true"><use href="#i-mail"/></svg><span data-btn-label>Send message</span></button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+              <p class="form-note">We only use your details to reply to you. Messages reach our inbox through FormSubmit, a free form service.</p>
+            </form>
+
+            <div class="form-success" hidden tabindex="-1">
+              <span class="success-icon" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+              <h3>Thank you! Your message was sent.</h3>
+              <p>We'll reply by email to <strong data-sent-email></strong>. You should also get a short automatic confirmation email.</p>
+              <button class="btn btn--secondary" type="button" data-send-another>Send another message</button>
+            </div>
           </div>
-          <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+
+          <aside class="contact-side" aria-labelledby="prefer-email">
+            <h3 id="prefer-email">Prefer email?</h3>
+            <p>Write to us any time at:</p>
+            <a class="email-big" href="mailto:aitaughtsimple@gmail.com" data-mailto data-site="email">aitaughtsimple@gmail.com</a>
+            <div class="actions">
+              <a class="btn btn--secondary" href="mailto:aitaughtsimple@gmail.com" data-mailto data-subject="Question about AI classes"><svg aria-hidden="true"><use href="#i-mail"/></svg>Open my email app</a>
+              <button class="btn btn--secondary" type="button" data-copy-email aria-describedby="copy-status" hidden><svg aria-hidden="true"><use href="#i-copy"/></svg>Copy email address</button>
+            </div>
+            <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+          </aside>
         </div>
       </div>
     </section>

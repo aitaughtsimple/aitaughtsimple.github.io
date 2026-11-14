@@ -20,15 +20,21 @@ Plain HTML and CSS with a little JavaScript. No framework, no build step. GitHub
 | `assets/qr.svg` | QR code pointing at the site (made locally by `tools/make_qr.py`) |
 | `assets/og-image.png` | Picture shown when the link is texted or emailed (made from `tools/og-card.html`) |
 | `404.html` | Shown for broken links |
+| `thanks/index.html` | "Message sent" page (only used if a visitor's browser has JavaScript off) |
+| `robots.txt`, `sitemap.xml` | Help Google find and list the site |
 
 ## Common edits
 
-**Rewrite the About section.** In `index.html`, search for `PLACEHOLDER`. Replace the yellow box with your own words:
+**Edit the About section.** In `index.html`, find `<!-- 5. About us -->`. The two paragraphs and the two name cards (Jaiden, Shubh) are plain text you can change.
 
-```html
-<p>Your first paragraph.</p>
-<p>Your second paragraph.</p>
-```
+## Contact form
+
+Messages from the Contact form are emailed to the address in `config.js` through [FormSubmit](https://formsubmit.co) (free, no account). Each message arrives as a table with the topic, name, email, organization, and message, and the sender gets an automatic "we got your message" email.
+
+- **First-time setup:** the very first message triggers an "Activate Form" email from FormSubmit to the club inbox. Click the button in that email once. Until then, messages are held, not delivered.
+- **Replying:** just press Reply in Gmail. It goes to the person who wrote in.
+- **Spam:** a hidden trap box blocks most bots without making visitors solve a puzzle.
+- **If you change the email** in `config.js`, the form follows it automatically, and the new address will get its own one-time activation email.
 
 **Add class dates.** In `index.html`, find the `Upcoming classes` section and replace the paragraph under "First classes coming..." with the date, time, and place.
 

@@ -26,6 +26,8 @@
 
   --note: #FFF4C2;
   --note-ink: #5C4500;
+  --field-line: #6F7C75; /* input borders: 4:1+ against white */
+  --error: #9B1C12;
 
   --font: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --display: "Bricolage Grotesque", "Atkinson Hyperlegible Next", system-ui, sans-serif;
@@ -496,24 +498,99 @@ a:hover { color: var(--green-deep); text-decoration-thickness: 3px; }
 .faq-item ul { padding-left: 1.3em; margin: 0 0 1em; }
 .faq-item li { margin-bottom: 0.45em; }
 
+/* ---------- About ---------- */
+
+.about { display: grid; gap: 2.5rem; align-items: center; }
+@media (min-width: 56em) { .about { grid-template-columns: 1.3fr 1fr; gap: 4rem; } }
+.about-lede { font-size: 1.25em; line-height: 1.5; font-weight: 700; }
+.people { display: grid; gap: 1rem; margin: 0; padding: 0; list-style: none; }
+.person {
+  display: flex; align-items: center; gap: 1.1rem; max-width: none;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md);
+  padding: 1.1rem 1.3rem; box-shadow: var(--shadow-sm);
+}
+.person:nth-child(2) { margin-left: clamp(0rem, 3vw, 2.5rem); }
+.person strong { display: block; font-size: 1.15em; }
+.person-role { display: block; color: var(--ink-soft); }
+.avatar {
+  flex: none; display: grid; place-items: center; width: 4rem; height: 4rem; border-radius: 50%;
+  background-color: var(--c); background-image: var(--grain);
+  font-family: var(--display); font-weight: 800; font-size: 1.7em; color: var(--ink);
+}
+
 /* ---------- Contact ---------- */
+
+.contact-grid { display: grid; gap: 1.75rem; align-items: start; }
+@media (min-width: 60em) { .contact-grid { grid-template-columns: 1.45fr 1fr; gap: 2.5rem; } }
 
 .contact-card {
   position: relative; overflow: hidden;
-  max-width: 50rem; background: var(--paper); border: 1px solid var(--line);
-  border-radius: var(--r-xl); padding: clamp(1.75rem, 1rem + 3vw, 3.25rem);
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--r-xl); padding: clamp(1.5rem, 1rem + 2.5vw, 3rem);
 }
 .contact-card > * { position: relative; z-index: 1; }
 .contact-art { position: absolute !important; inset: 0; z-index: 0 !important; pointer-events: none; }
-.contact-art .paper--sun { width: 8rem; height: 8rem; top: -2.5rem; right: -2rem; left: auto; border-radius: 50%; --r: 0deg; }
-.contact-art .paper--sky { width: 5rem; height: 5rem; bottom: -1.5rem; right: 18%; }
+.contact-art .paper--sun { width: 8rem; height: 8rem; top: -3.5rem; right: -3rem; left: auto; border-radius: 50%; --r: 0deg; }
+.contact-art .paper--sky { width: 5rem; height: 5rem; bottom: -2rem; right: 12%; }
 @media (max-width: 47.99em) { .contact-art { display: none; } }
-.email-big {
-  display: inline-block; padding-block: 0.4rem; margin-bottom: 0.25rem;
-  font-family: var(--display); font-weight: 800; letter-spacing: -0.02em;
-  font-size: clamp(1.5rem, 1.1rem + 2vw, 2.4rem); overflow-wrap: anywhere;
+
+/* Form */
+.field { margin: 0 0 1.5rem; }
+fieldset.field { border: 0; padding: 0; min-width: 0; }
+.field label, .field legend { display: block; padding: 0; margin-bottom: 0.45rem; font-weight: 700; font-size: 1.05em; }
+.optional { font-weight: 400; color: var(--ink-soft); }
+.field-hint { margin: -0.2rem 0 0.5rem; color: var(--ink-soft); font-size: 0.95em; }
+.field input[type="text"], .field input[type="email"], .field textarea {
+  display: block; width: 100%; min-height: 3.6rem;
+  padding: 0.8rem 1rem; margin: 0;
+  font: inherit; color: var(--ink); background: #fff;
+  border: 2px solid var(--field-line); border-radius: 14px;
+  transition: border-color 160ms var(--ease), box-shadow 160ms var(--ease);
 }
-.contact-card .actions { margin-bottom: 0.5rem; }
+.field textarea { min-height: 9.5rem; resize: vertical; line-height: 1.5; }
+.field input:focus, .field textarea:focus { border-color: var(--green); box-shadow: 0 0 0 4px rgba(29, 92, 75, .18); }
+.field [aria-invalid="true"] { border-color: var(--error); box-shadow: 0 0 0 4px rgba(155, 28, 18, .12); }
+.field-error { display: flex; gap: 0.45rem; align-items: flex-start; margin: 0.5rem 0 0; color: var(--error); font-weight: 700; }
+.field-error::before { content: "!"; flex: none; display: grid; place-items: center; width: 1.4rem; height: 1.4rem; margin-top: 0.15rem; border-radius: 50%; background: var(--error); color: #fff; font-size: 0.85em; }
+.field-error[hidden] { display: none; }
+
+.choices { display: grid; gap: 0.6rem; }
+.field .choice {
+  display: flex; align-items: center; gap: 0.75rem; min-height: 3.6rem;
+  padding: 0.6rem 1rem; margin: 0;
+  background: #fff; border: 2px solid var(--field-line); border-radius: 14px;
+  font-weight: 700; font-size: 0.98em; line-height: 1.25; cursor: pointer;
+  transition: border-color 160ms var(--ease), background-color 160ms var(--ease);
+}
+.field .choice input { flex: none; width: 1.45rem; height: 1.45rem; margin: 0; accent-color: var(--green); cursor: pointer; }
+.field .choice:has(input:checked) { border-color: var(--green); background: var(--green-tint); }
+.field .choice:has(input:focus-visible) { outline: 4px solid var(--ink); outline-offset: 3px; }
+
+.hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.btn--block { width: 100%; }
+.btn[aria-busy="true"] { opacity: .75; cursor: progress; }
+.form-status { min-height: 1.6em; margin: 0.9rem 0 0; font-weight: 700; }
+.form-status.is-error { color: var(--error); }
+.form-note { margin: 0.4rem 0 0; font-size: 0.9em; color: var(--ink-soft); }
+
+.form-success:focus { outline: none; }
+.success-icon { display: grid; place-items: center; width: 4.5rem; height: 4.5rem; margin-bottom: 1.25rem; border-radius: 50%; background-color: var(--mint); background-image: var(--grain); color: var(--green-deep); }
+.success-icon svg { width: 2.6rem; height: 2.6rem; }
+.form-success h3 { font-family: var(--display); font-weight: 800; font-size: clamp(1.6rem, 1.3rem + 1vw, 2.1rem); letter-spacing: -0.02em; }
+
+/* Email side */
+.contact-side {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg);
+  padding: clamp(1.4rem, 1rem + 1.5vw, 2.25rem);
+}
+.contact-side h3 { font-size: 1.3em; }
+.contact-side .actions { flex-direction: column; margin: 1.25rem 0 0.5rem; }
+.contact-side .btn { width: 100%; }
+.email-big {
+  display: inline-block; padding-block: 0.4rem;
+  font-family: var(--display); font-weight: 800; letter-spacing: -0.02em;
+  font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.7rem); overflow-wrap: anywhere;
+}
 .copy-status { min-height: 1.6em; margin: 0; color: var(--green-deep); font-weight: 700; }
 
 /* ---------- Footer ---------- */

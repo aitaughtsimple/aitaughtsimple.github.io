@@ -92,6 +92,7 @@
 
     form.action = "https://formsubmit.co/" + S.email;
     form.elements._next.value = S.url.replace(/\/?$/, "/") + "thanks/";
+    if (form.elements._url) form.elements._url.value = S.url; // FormSubmit identifies the form by this address
     form.noValidate = true; // we show our own, larger error messages
 
     var checks = [
@@ -158,6 +159,7 @@
         _subject: "",
         _template: "table",
         _captcha: "false",
+        _url: S.url,
         _honey: form.elements._honey.value,
         _autoresponse: "Thank you for contacting " + S.name + ". We got your message and will reply by email soon. (This is an automatic reply, so there's no need to answer it.)"
       };

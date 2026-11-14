@@ -26,8 +26,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap">
-  <link rel="stylesheet" href="assets/styles.css?v=130418">
-  <script src="config.js?v=130418"></script>
+  <link rel="stylesheet" href="assets/styles.css?v=130932">
+  <script src="config.js?v=130932"></script>
+  <script>try{var t=localStorage.getItem("ats-text");if(t)document.documentElement.style.fontSize=t;}catch(e){}</script>
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -39,11 +40,25 @@
       <symbol id="i-shield" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3.5l10.5 4V15c0 6.8-4.4 11.6-10.5 13.5C9.9 26.6 5.5 21.8 5.5 15V7.5z"/><polyline points="11 15.5 14.5 19 21 12"/></g></symbol>
       <symbol id="i-calendar" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="24" height="22" rx="3"/><path d="M4 12.5h24M10.5 3.5v5M21.5 3.5v5"/></g></symbol>
       <symbol id="i-mic" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="4" width="8" height="15" rx="4"/><path d="M7.5 15.5a8.5 8.5 0 0 0 17 0M16 24v4"/></g></symbol>
+      <symbol id="i-chat" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-8l-6 5v-5H9a3 3 0 0 1-3-3z"/></g></symbol>
+      <symbol id="i-call" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h4l2 6-3 2a15 15 0 0 0 8 8l2-3 6 2v4a3 3 0 0 1-3 3A21 21 0 0 1 6 7a3 3 0 0 1 3-3z"/></g></symbol>
+      <symbol id="i-screen" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="25" height="17" rx="2.5"/><path d="M11 27h10M16 22v5"/></g></symbol>
       <symbol id="i-copy" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="11" y="11" width="16" height="16" rx="3"/><path d="M21 11V8a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h3"/></g></symbol>
     </defs>
   </svg>
 
   <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="textsize" hidden>
+    <div class="wrap">
+      <span id="ts-label">Text size</span>
+      <div class="ts-btns" role="group" aria-labelledby="ts-label">
+        <button type="button" data-text-size="100%" aria-label="Normal text size">A</button>
+        <button type="button" data-text-size="112.5%" aria-label="Larger text">A+</button>
+        <button type="button" data-text-size="125%" aria-label="Largest text">A++</button>
+      </div>
+    </div>
+  </div>
 
   <header class="site-header">
     <div class="wrap">
@@ -54,6 +69,7 @@
       <nav class="site-nav" aria-label="Main">
         <ul>
           <li class="nav-extra"><a href="#teach">What we teach</a></li>
+          <li class="nav-extra"><a href="curriculum/">Curriculum</a></li>
           <li class="nav-extra"><a href="#host">Host a class</a></li>
           <li class="nav-cta"><a href="#contact">Contact</a></li>
         </ul>
@@ -152,6 +168,10 @@
             <p class="try"><strong>A good rule:</strong>A call from family asking for money? Hang up and call them back on a number you know.</p>
           </li>
         </ul>
+        <div class="more-link">
+          <a class="btn btn--secondary" href="curriculum/">See the full curriculum</a>
+          <a class="btn btn--secondary" href="cheat-sheet/">Print the AI cheat sheet</a>
+        </div>
       </div>
     </section>
 
@@ -186,6 +206,92 @@
           </li>
         </ol>
         <p class="note-line"><svg aria-hidden="true"><use href="#i-check"/></svg>Every class is free and takes about an hour.</p>
+      </div>
+    </section>
+
+    <!-- 3b. Real or scam quiz -->
+    <section class="section section--band" id="quiz" aria-labelledby="quiz-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="quiz-title">Real or scam? Try it</h2>
+          <p>Six messages like the ones people really get. Pick an answer to see why.</p>
+        </div>
+        <ol class="quiz" data-quiz>
+          <li class="qcard" data-answer="scam">
+            <p class="qkind"><svg aria-hidden="true"><use href="#i-chat"/></svg>Text message</p>
+            <blockquote class="qmsg">USPS: Your package can't be delivered because of an incomplete address. Update it within 24 hours: usps-redeliver-help.com</blockquote>
+            <div class="qbtns" hidden>
+              <button class="btn btn--secondary" type="button" data-guess="real">Looks real</button>
+              <button class="btn btn--secondary" type="button" data-guess="scam">It's a scam</button>
+            </div>
+            <div class="qresult" hidden>
+              <p class="qverdict"><strong>This is a scam.</strong></p>
+              <p>The Postal Service doesn't text you links out of the blue, the web address isn't usps.com, and the 24-hour deadline is meant to rush you.</p>
+            </div>
+          </li>
+          <li class="qcard" data-answer="scam">
+            <p class="qkind"><svg aria-hidden="true"><use href="#i-call"/></svg>Phone call</p>
+            <blockquote class="qmsg">A voice that sounds just like your grandson, crying: "Grandma, I'm in trouble. Please send $2,000 in gift cards, and don't tell Mom."</blockquote>
+            <div class="qbtns" hidden>
+              <button class="btn btn--secondary" type="button" data-guess="real">Looks real</button>
+              <button class="btn btn--secondary" type="button" data-guess="scam">It's a scam</button>
+            </div>
+            <div class="qresult" hidden>
+              <p class="qverdict"><strong>This is a scam.</strong></p>
+              <p>Scammers can copy a voice from a short video online. Gift cards and secrecy are red flags. Hang up and call him on the number you already have.</p>
+            </div>
+          </li>
+          <li class="qcard" data-answer="real">
+            <p class="qkind"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email from your library</p>
+            <blockquote class="qmsg">"Reminder: The book you borrowed is due Friday. You can renew it in your library account." It has no links and asks for nothing.</blockquote>
+            <div class="qbtns" hidden>
+              <button class="btn btn--secondary" type="button" data-guess="real">Looks real</button>
+              <button class="btn btn--secondary" type="button" data-guess="scam">It's a scam</button>
+            </div>
+            <div class="qresult" hidden>
+              <p class="qverdict"><strong>This one is real.</strong></p>
+              <p>It doesn't rush you, ask for money, or ask for a password. When in doubt, go to the library's website yourself instead of clicking.</p>
+            </div>
+          </li>
+          <li class="qcard" data-answer="scam">
+            <p class="qkind"><svg aria-hidden="true"><use href="#i-screen"/></svg>Pop-up on your computer</p>
+            <blockquote class="qmsg">"WARNING! Your computer has a virus. Call Microsoft Support now at the number below. Do not turn off your computer."</blockquote>
+            <div class="qbtns" hidden>
+              <button class="btn btn--secondary" type="button" data-guess="real">Looks real</button>
+              <button class="btn btn--secondary" type="button" data-guess="scam">It's a scam</button>
+            </div>
+            <div class="qresult" hidden>
+              <p class="qverdict"><strong>This is a scam.</strong></p>
+              <p>Real companies don't put phone numbers in scary pop-ups. Close the browser. If it won't close, restart the computer.</p>
+            </div>
+          </li>
+          <li class="qcard" data-answer="scam">
+            <p class="qkind"><svg aria-hidden="true"><use href="#i-chat"/></svg>Text message</p>
+            <blockquote class="qmsg">"Unpaid toll: $6.99. Pay today to avoid a $50 late fee: ezpass-tollpay.info"</blockquote>
+            <div class="qbtns" hidden>
+              <button class="btn btn--secondary" type="button" data-guess="real">Looks real</button>
+              <button class="btn btn--secondary" type="button" data-guess="scam">It's a scam</button>
+            </div>
+            <div class="qresult" hidden>
+              <p class="qverdict"><strong>This is a scam.</strong></p>
+              <p>Fake toll texts are very common. Check your balance on the official E-ZPass website or app, never through a link in a text.</p>
+            </div>
+          </li>
+          <li class="qcard" data-answer="real">
+            <p class="qkind"><svg aria-hidden="true"><use href="#i-chat"/></svg>In the ChatGPT app</p>
+            <blockquote class="qmsg">You ask for an easy dinner idea, and ChatGPT suggests a recipe. It doesn't ask you for anything personal.</blockquote>
+            <div class="qbtns" hidden>
+              <button class="btn btn--secondary" type="button" data-guess="real">Looks real</button>
+              <button class="btn btn--secondary" type="button" data-guess="scam">It's a scam</button>
+            </div>
+            <div class="qresult" hidden>
+              <p class="qverdict"><strong>This one is real.</strong></p>
+              <p>That's normal. AI tools never need your Social Security number, bank details, or passwords. If one asks, stop.</p>
+            </div>
+          </li>
+        </ol>
+        <p class="qscore" aria-live="polite"></p>
+        <noscript><style>.qresult{display:block!important}</style></noscript>
       </div>
     </section>
 
@@ -308,6 +414,7 @@
                 <div class="choices">
                   <label class="choice"><input type="radio" name="topic" value="I'd like to host a class"><span>I'd like to host a class</span></label>
                   <label class="choice"><input type="radio" name="topic" value="I have a question" checked><span>I have a question</span></label>
+                  <label class="choice"><input type="radio" name="topic" value="Tell me when classes start"><span>Tell me when classes start</span></label>
                   <label class="choice"><input type="radio" name="topic" value="Something else"><span>Something else</span></label>
                 </div>
               </fieldset>
@@ -370,6 +477,8 @@
       <p class="footer-name"><img src="assets/icon.svg" alt="" width="36" height="36"><span data-site="name">AI Taught Simple</span></p>
       <p>Run by <span data-site="team">Jaiden and Shubh</span>, students at <span data-site="school">Glenelg High School</span> in <span data-site="area">Howard County, Maryland</span>.</p>
       <ul class="footer-links">
+        <li><a href="curriculum/">Curriculum</a></li>
+        <li><a href="cheat-sheet/">AI cheat sheet</a></li>
         <li><a href="flyer/">Printable flyer</a></li>
         <li><a href="mailto:aitaughtsimple@gmail.com" data-mailto>Email us</a></li>
       </ul>
@@ -377,6 +486,6 @@
     </div>
   </footer>
 
-  <script src="assets/site.js?v=130418" defer></script>
+  <script src="assets/site.js?v=130932" defer></script>
 </body>
 </html>

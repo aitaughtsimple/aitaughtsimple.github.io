@@ -201,4 +201,62 @@
       form.elements.name.focus();
     });
   });
+  // Text size control (A / A+ / A++), remembered on this device
+  each(".textsize", function (bar) {
+    var buttons = bar.querySelectorAll("[data-text-size]");
+    var current = document.documentElement.style.fontSize || "100%";
+    function apply(size) {
+      document.documentElement.style.fontSize = size;
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].setAttribute("aria-pressed", buttons[i].getAttribute("data-text-size") === size ? "true" : "false");
+      }
+      try { localStorage.setItem("ats-text", size); } catch (e) {}
+    }
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", function () { apply(this.getAttribute("data-text-size")); });
+    }
+    bar.hidden = false;
+    for (var j = 0; j < buttons.length; j++) {
+      buttons[j].setAttribute("aria-pressed", buttons[j].getAttribute("data-text-size") === current ? "true" : "false");
+    }
+  });
+
+  // "Real or scam?" quiz
+  each("[data-quiz]", function (quiz) {
+    var cards = quiz.querySelectorAll(".qcard");
+    var score = quiz.parentNode.querySelector(".qscore");
+    var answered = 0, right = 0;
+    for (var i = 0; i < cards.length; i++) (function (card) {
+      var btns = card.querySelector(".qbtns");
+      var result = card.querySelector(".qresult");
+      var verdict = result.querySelector(".qverdict");
+      var truth = card.getAttribute("data-answer");
+      var base = verdict.innerHTML;
+      btns.hidden = false;
+      var choices = btns.querySelectorAll("[data-guess]");
+      for (var k = 0; k < choices.length; k++) choices[k].addEventListener("click", function () {
+        var ok = this.getAttribute("data-guess") === truth;
+        for (var m = 0; m < choices.length; m++) {
+          choices[m].disabled = true;
+          choices[m].setAttribute("aria-pressed", choices[m] === this ? "true" : "false");
+        }
+        result.className = "qresult" + (ok ? "" : " is-wrong");
+        verdict.innerHTML = '<span class="mark" aria-hidden="true">' + (ok ? "&#10003;" : "!") + "</span>" +
+          "<span>" + (ok ? "Right! " : "Not quite. ") + base + "</span>";
+        result.hidden = false;
+        result.setAttribute("tabindex", "-1");
+        result.focus({ preventScroll: true });
+        answered++; if (ok) right++;
+        if (score) score.textContent = answered === cards.length
+          ? "You got " + right + " of " + cards.length + " right. " + (right === cards.length ? "Excellent scam-spotting!" : "Lesson 5 in our classes covers all of these.")
+          : "So far: " + right + " of " + answered + " right.";
+      });
+    })(cards[i]);
+  });
+
+  // Links from other pages ("?topic=host#contact") pre-pick the contact form topic
+  if (/[?&]topic=host\b/.test(location.search)) {
+    var hostRadio = document.querySelector('[data-contact-form] input[name="topic"][value^="I\'d like to host"]');
+    if (hostRadio) hostRadio.checked = true;
+  }
 })();

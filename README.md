@@ -19,6 +19,8 @@ Plain HTML and CSS with a little JavaScript. No framework, no build step. GitHub
 | `assets/site.js` | Fills pages with the values from `config.js`, builds email links, copy button |
 | `assets/qr.svg` | QR code pointing at the site (made locally by `tools/make_qr.py`) |
 | `assets/og-image.png` | Picture shown when the link is texted or emailed (made from `tools/og-card.html`) |
+| `curriculum/index.html` | The six-lesson curriculum and the 60-minute class plan |
+| `cheat-sheet/index.html` | One-page printable AI cheat sheet to hand out in class |
 | `404.html` | Shown for broken links |
 | `thanks/index.html` | "Message sent" page (only used if a visitor's browser has JavaScript off) |
 | `robots.txt`, `sitemap.xml` | Help Google find and list the site |
@@ -26,6 +28,10 @@ Plain HTML and CSS with a little JavaScript. No framework, no build step. GitHub
 ## Common edits
 
 **Edit the About section.** In `index.html`, find `<!-- 5. About us -->`. The two paragraphs and the two name cards (Jaiden, Shubh) are plain text you can change.
+
+**Edit the quiz.** In `index.html`, find `<!-- 3b. Real or scam quiz -->`. Each card has `data-answer="scam"` or `data-answer="real"`, the message, and the explanation.
+
+**Text size buttons.** The A / A+ / A++ bar at the top of the home and curriculum pages remembers each visitor's choice on their device.
 
 ## Contact form
 

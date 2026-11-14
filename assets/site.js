@@ -18,6 +18,11 @@
     if (value) el.textContent = value;
   });
 
+  // Calendar page in "Upcoming classes": "January 2027" -> "January" / "2027"
+  var when = (S.firstClasses || "").split(" ");
+  each("[data-site-month]", function (el) { if (when[0]) el.textContent = when[0]; });
+  each("[data-site-year]", function (el) { if (when[1]) el.textContent = when[1]; });
+
   // Web address shown without "https://" (used on the flyer)
   each("[data-site-url]", function (el) {
     el.textContent = S.url.replace(/^https?:\/\//, "").replace(/\/$/, "");

@@ -24,7 +24,7 @@
   <link rel="apple-touch-icon" href="assets/icon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap">
   <link rel="stylesheet" href="assets/styles.css">
   <script src="config.js"></script>
 </head>
@@ -37,6 +37,7 @@
       <symbol id="i-pin" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 28.5s-8.5-7.8-8.5-14.5a8.5 8.5 0 0 1 17 0c0 6.7-8.5 14.5-8.5 14.5z"/><circle cx="16" cy="14" r="3.2"/></g></symbol>
       <symbol id="i-shield" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3.5l10.5 4V15c0 6.8-4.4 11.6-10.5 13.5C9.9 26.6 5.5 21.8 5.5 15V7.5z"/><polyline points="11 15.5 14.5 19 21 12"/></g></symbol>
       <symbol id="i-calendar" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="24" height="22" rx="3"/><path d="M4 12.5h24M10.5 3.5v5M21.5 3.5v5"/></g></symbol>
+      <symbol id="i-mic" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="4" width="8" height="15" rx="4"/><path d="M7.5 15.5a8.5 8.5 0 0 0 17 0M16 24v4"/></g></symbol>
       <symbol id="i-copy" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="11" y="11" width="16" height="16" rx="3"/><path d="M21 11V8a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h3"/></g></symbol>
     </defs>
   </svg>
@@ -53,7 +54,7 @@
         <ul>
           <li class="nav-extra"><a href="#teach">What we teach</a></li>
           <li class="nav-extra"><a href="#host">Host a class</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li class="nav-cta"><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -63,8 +64,9 @@
 
     <!-- 1. Hero -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="wrap">
+      <div class="wrap hero-grid">
         <div>
+          <p class="pill"><span class="pill-dot" aria-hidden="true"></span><span>Free classes in <span data-site="area">Howard County, Maryland</span></span></p>
           <h1 id="hero-title" data-site="name">AI Taught Simple</h1>
           <p class="lede">Free, hands-on classes that show anyone, especially seniors, how to use AI tools like ChatGPT in everyday life. Taught by local high school students.</p>
           <div class="actions">
@@ -79,20 +81,37 @@
           </ul>
         </div>
 
-        <figure class="chat" aria-label="Example of a question you can ask ChatGPT">
-          <div class="chat-thread">
-            <div class="msg msg--you">
-              <span class="msg-who">You</span>
-              <div class="msg-bubble"><p>Help me write a short thank-you note to my neighbor for shoveling my driveway.</p></div>
-            </div>
-            <div class="msg msg--ai">
-              <span class="msg-who">ChatGPT</span>
-              <div class="msg-bubble">
-                <p>Dear Tom,</p>
-                <p>Thank you so much for shoveling my driveway this morning. It was a kind surprise and made my whole day easier. I'm lucky to have a neighbor like you.</p>
-                <p>Warmly,<br>Ruth</p>
+        <figure class="stage" aria-label="Example of a question you can ask ChatGPT on your phone">
+          <div class="stage-canvas">
+            <span class="paper paper--sun" aria-hidden="true"></span>
+            <span class="paper paper--blush" aria-hidden="true"></span>
+            <span class="paper paper--mint" aria-hidden="true"></span>
+            <span class="paper paper--sky" aria-hidden="true"></span>
+            <svg class="brush" viewBox="0 0 240 120" aria-hidden="true"><path d="M16 96 C 46 40, 84 112, 122 58 S 196 36, 222 20"/></svg>
+            <span class="dots" aria-hidden="true"></span>
+            <svg class="dash-path" viewBox="0 0 200 110" aria-hidden="true"><path d="M6 100 C 50 104, 64 30, 120 40 S 178 70, 190 14"/></svg>
+            <svg class="cursor" viewBox="0 0 32 32" aria-hidden="true"><path d="M7 4l18 10.5-8 2.2 4.6 8.6-3.6 1.9-4.6-8.6-6.2 5.5z" fill="#1F2925" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg>
+
+            <div class="phone">
+              <div class="phone-screen">
+                <div class="phone-bar" aria-hidden="true"><span>9:41</span><span class="island"></span><span class="bar-icons"><i></i><i></i><i></i></span></div>
+                <div class="phone-head" aria-hidden="true">ChatGPT</div>
+                <div class="phone-chat">
+                  <p class="bubble bubble--you"><span class="sr-only">You ask: </span>Help me write a short thank-you note to my neighbor for shoveling my driveway.</p>
+                  <div class="bubble bubble--ai">
+                    <span class="sr-only">ChatGPT answers: </span>
+                    <p>Dear Tom,</p>
+                    <p>Thank you so much for shoveling my driveway this morning. It was a kind surprise and made my whole day easier. I'm lucky to have a neighbor like you.</p>
+                    <p>Warmly,<br>Ruth</p>
+                  </div>
+                </div>
+                <div class="phone-input" aria-hidden="true"><span>Ask anything</span><span class="mic"><svg><use href="#i-mic"/></svg></span></div>
               </div>
             </div>
+
+            <div class="tile tile--a" aria-hidden="true"><span class="tile-icon" style="--c: var(--sun)"><svg><use href="#i-mail"/></svg></span>Write a letter</div>
+            <div class="tile tile--b" aria-hidden="true"><span class="tile-icon" style="--c: var(--blush)"><svg><use href="#i-shield"/></svg></span>Spot a scam</div>
+            <div class="tile tile--c" aria-hidden="true"><span class="tile-icon" style="--c: var(--sky)"><svg><use href="#i-pin"/></svg></span>Plan a trip</div>
           </div>
           <figcaption>An example of what you can ask. You can type your question or say it out loud, then ask for changes like "make it shorter."</figcaption>
         </figure>
@@ -100,10 +119,12 @@
     </section>
 
     <!-- 2. What we teach -->
-    <section class="section section--tint" id="teach" aria-labelledby="teach-title">
+    <section class="section section--band" id="teach" aria-labelledby="teach-title">
       <div class="wrap">
-        <h2 id="teach-title">What we teach</h2>
-        <p class="section-intro">Practical, everyday uses. No tech words and no pressure.</p>
+        <div class="section-head">
+          <h2 id="teach-title">What we teach</h2>
+          <p>Practical, everyday uses. No tech words and no pressure.</p>
+        </div>
         <ul class="cards">
           <li class="card">
             <span class="card-icon"><svg aria-hidden="true"><use href="#i-mail"/></svg></span>
@@ -136,8 +157,10 @@
     <!-- 3. How a class works -->
     <section class="section" id="how" aria-labelledby="how-title">
       <div class="wrap">
-        <h2 id="how-title">How a class works</h2>
-        <p class="section-intro">Three simple steps. Go at your own pace.</p>
+        <div class="section-head">
+          <h2 id="how-title">How a class works</h2>
+          <p>Three simple steps. Go at your own pace.</p>
+        </div>
         <ol class="steps">
           <li class="step">
             <span class="step-num" aria-hidden="true">1</span>
@@ -161,19 +184,25 @@
             </div>
           </li>
         </ol>
-        <p class="note-line">Every class is free and takes about an hour.</p>
+        <p class="note-line"><svg aria-hidden="true"><use href="#i-check"/></svg>Every class is free and takes about an hour.</p>
       </div>
     </section>
 
     <!-- 4. For organizations -->
-    <section class="section section--tint" id="host" aria-labelledby="host-title">
-      <div class="wrap host">
+    <section class="section" id="host" aria-labelledby="host-title">
+      <div class="wrap">
+       <div class="poster">
+        <div class="poster-art" aria-hidden="true">
+          <span class="paper paper--sun"></span>
+          <span class="paper paper--blush"></span>
+          <span class="dots"></span>
+        </div>
         <div>
           <h2 id="host-title">Host a free class</h2>
           <p>We'd love to teach at your library, senior center, or community group. It's free. We bring the students and the lesson.</p>
           <p>Email us a few dates that work for you, and we'll plan the rest together.</p>
           <div class="actions">
-            <a class="btn btn--primary" href="mailto:aitaughtsimple@gmail.com?subject=Hosting%20a%20free%20AI%20class" data-mailto data-subject="Hosting a free AI class" data-body="Hi {team},\n\nWe'd like to host a free AI class.\n\nOrganization name:\nTown:\nGood days and times:\nAbout how many people:\nDo you have a TV or projector we can use?\n\nThank you,\n">
+            <a class="btn btn--light" href="mailto:aitaughtsimple@gmail.com?subject=Hosting%20a%20free%20AI%20class" data-mailto data-subject="Hosting a free AI class" data-body="Hi {team},\n\nWe'd like to host a free AI class.\n\nOrganization name:\nTown:\nGood days and times:\nAbout how many people:\nDo you have a TV or projector we can use?\n\nThank you,\n">
               <svg aria-hidden="true"><use href="#i-mail"/></svg>Email us to host a class
             </a>
           </div>
@@ -193,6 +222,7 @@
             <li><svg aria-hidden="true"><use href="#i-check"/></svg>45 to 60 minutes</li>
           </ul>
         </div>
+       </div>
       </div>
     </section>
 
@@ -210,11 +240,11 @@
     </section>
 
     <!-- 6. Upcoming classes -->
-    <section class="section section--tint" id="upcoming" aria-labelledby="upcoming-title">
+    <section class="section section--band" id="upcoming" aria-labelledby="upcoming-title">
       <div class="wrap">
         <h2 id="upcoming-title">Upcoming classes</h2>
         <div class="upcoming">
-          <svg aria-hidden="true"><use href="#i-calendar"/></svg>
+          <div class="cal" aria-hidden="true"><span class="cal-top" data-site-month>January</span><span class="cal-year" data-site-year>2027</span></div>
           <div>
             <p class="upcoming-when">First classes coming <span data-site="firstClasses">January 2027</span></p>
             <p>Dates and places will be listed here once they're set. Want the first one at your library or center? <a href="#host">Host a free class</a>.</p>
@@ -254,11 +284,14 @@
     </section>
 
     <!-- 8. Contact -->
-    <section class="section section--tint" id="contact" aria-labelledby="contact-title">
+    <section class="section section--band" id="contact" aria-labelledby="contact-title">
       <div class="wrap">
-        <h2 id="contact-title">Contact us</h2>
-        <p class="section-intro">Have a question, or want to host a class? Email us.</p>
-        <div class="contact-box">
+        <div class="section-head">
+          <h2 id="contact-title">Contact us</h2>
+          <p>Have a question, or want to host a class? Email us.</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-art" aria-hidden="true"><span class="paper paper--sun"></span><span class="paper paper--sky"></span></div>
           <a class="email-big" href="mailto:aitaughtsimple@gmail.com" data-mailto data-site="email">aitaughtsimple@gmail.com</a>
           <div class="actions">
             <a class="btn btn--primary" href="mailto:aitaughtsimple@gmail.com" data-mailto data-subject="Question about AI classes">
@@ -277,7 +310,7 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <p class="footer-name" data-site="name">AI Taught Simple</p>
+      <p class="footer-name"><img src="assets/icon.svg" alt="" width="36" height="36"><span data-site="name">AI Taught Simple</span></p>
       <p>Run by <span data-site="team">Jaiden and Shubh</span>, students at <span data-site="school">Glenelg High School</span> in <span data-site="area">Howard County, Maryland</span>.</p>
       <ul class="footer-links">
         <li><a href="flyer/">Printable flyer</a></li>

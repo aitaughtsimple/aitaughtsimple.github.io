@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" data-title="{name}: Printable flyer">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- RENAME: if you change the club name in config.js, change it in this line too. -->
+  <title>AI Taught Simple: Printable flyer</title>
+  <meta name="description" content="A one-page printable flyer for free AI classes for older adults.">
+  <link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../assets/flyer.css">
+  <script src="../config.js"></script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-check" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="13"/><polyline points="10 16.5 14.5 21 22.5 12"/></g></symbol>
+    </defs>
+  </svg>
+
+  <div class="toolbar">
+    <a class="tb-btn" href="../">Back to website</a>
+    <button class="tb-btn tb-btn--primary" type="button" data-print>Print this flyer</button>
+    <p>Prints on one letter-size sheet. If your printer adds a web address or date at the edges, turn off "Headers and footers" in the print window.</p>
+  </div>
+
+  <main class="sheet">
+    <header class="f-head">
+      <img class="f-logo" src="../assets/icon.svg" alt="" width="60" height="60">
+      <p class="f-name" data-site="name">AI Taught Simple</p>
+    </header>
+
+    <h1 class="f-title">Free classes: learn to use AI on your phone</h1>
+    <p class="f-lede">High school students show you how to use AI tools like ChatGPT for everyday tasks, one on one.</p>
+
+    <div class="f-grid">
+      <section>
+        <h2>What you'll learn</h2>
+        <ul class="f-list">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Write emails and letters</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Get quick answers</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Plan trips and meals</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Spot AI scams: fake calls, voice clones, and phishing texts</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Keep your personal info safe</li>
+        </ul>
+      </section>
+      <section class="f-facts">
+        <h2>Good to know</h2>
+        <ul>
+          <li><strong>Free</strong> for everyone</li>
+          <li><strong>About 1 hour</strong></li>
+          <li><strong>No experience</strong> needed</li>
+          <li><strong>Bring your phone</strong></li>
+          <li><strong>One-on-one</strong> help from students</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="f-when">
+      <p class="f-when-title">First classes coming <span data-site="firstClasses">January 2027</span></p>
+      <div class="f-blanks" aria-label="Spaces to write in the class details">
+        <span>Date:<i></i></span>
+        <span>Time:<i></i></span>
+        <span class="f-wide">Place:<i></i></span>
+      </div>
+    </section>
+
+    <section class="f-scan">
+      <img class="f-qr" src="../assets/qr.svg" alt="QR code that opens our website">
+      <div>
+        <p class="f-scan-title">Scan with your phone's camera to visit our website</p>
+        <p class="f-url" data-site-url>aitaughtsimple.github.io</p>
+        <p class="f-contact">Questions, or want to host a free class?<br>Email <strong data-site="email">aitaughtsimple@gmail.com</strong></p>
+      </div>
+    </section>
+
+    <footer class="f-foot">Run by <span data-site="team">Jaiden and Shubh</span>, students at <span data-site="school">Glenelg High School</span> in <span data-site="area">Howard County, Maryland</span>.</footer>
+  </main>
+
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>

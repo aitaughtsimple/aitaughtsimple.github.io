@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- Source for assets/og-image.png, the picture shown when someone texts or emails the link.
+     To remake it (from the project folder):
+     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars \
+       --window-size=1200,630 --virtual-time-budget=5000 --screenshot=assets/og-image.png tools/og-card.html -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&display=swap">
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: #FDFCF9;
+    color: #1F2925;
+    font-family: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 56px;
+    align-items: center;
+    padding: 0 80px;
+    box-sizing: border-box;
+    border-bottom: 18px solid #1D5C4B;
+  }
+  .name { display: flex; align-items: center; gap: 24px; font-size: 64px; font-weight: 700; color: #1D5C4B; letter-spacing: -0.02em; line-height: 1; }
+  .name img { width: 96px; height: 96px; }
+  h1 { font-size: 54px; line-height: 1.12; margin: 40px 0 20px; letter-spacing: -0.015em; }
+  p { font-size: 30px; margin: 0; color: #44514B; }
+  .bubble { background: #1D5C4B; color: #fff; font-size: 32px; line-height: 1.35; padding: 28px 32px; border-radius: 34px 34px 8px 34px; }
+  .reply { margin-top: 22px; background: #EAF2EE; font-size: 30px; line-height: 1.35; padding: 24px 30px; border-radius: 34px 34px 34px 8px; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="name"><img src="../assets/icon.svg" alt="">AI Taught Simple</div>
+    <h1>Free, hands-on AI classes for older adults</h1>
+    <p>Taught one on one by local high school students</p>
+  </div>
+  <div>
+    <div class="bubble">Help me write a thank-you note to my neighbor.</div>
+    <div class="reply">Dear Tom, thank you so much for...</div>
+  </div>
+</body>
+</html>

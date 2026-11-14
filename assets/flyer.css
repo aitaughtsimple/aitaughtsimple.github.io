@@ -1,0 +1,158 @@
+/* Printable flyer: one US letter sheet (8.5 x 11 in).
+   Sizes inside the sheet use em, so the on-screen preview can shrink on phones. */
+
+:root {
+  --ink: #1F2925;
+  --ink-soft: #44514B;
+  --green: #1D5C4B;
+  --green-tint: #EAF2EE;
+  --line: #BFCFC7;
+  --font: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #E4E9E6;
+  color: var(--ink);
+  font-family: var(--font);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+:focus-visible { outline: 4px solid var(--ink); outline-offset: 3px; border-radius: 6px; }
+
+/* ---------- Screen-only toolbar ---------- */
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  font-size: 19px;
+}
+.toolbar p { flex-basis: 100%; max-width: 40em; margin: 0; text-align: center; font-size: 17px; line-height: 1.45; color: var(--ink-soft); }
+.tb-btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 56px;
+  padding: 10px 22px;
+  border: 3px solid var(--green);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--green);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.tb-btn--primary { background: var(--green); color: #fff; }
+
+/* ---------- The sheet ---------- */
+
+.sheet {
+  display: flex;
+  flex-direction: column;
+  width: 8.5in;
+  height: 11in;
+  margin: 24px auto 48px;
+  padding: 0.5in 0.6in 0.45in;
+  background: #fff;
+  box-shadow: 0 2px 14px rgba(31, 41, 37, 0.18);
+  overflow: hidden;
+  font-size: 14pt;
+  line-height: 1.35;
+}
+
+/* :where() keeps these resets at zero weight so the classes below can set margins */
+.sheet :where(p, h1, h2, ul) { margin: 0; }
+.sheet :where(ul) { padding: 0; list-style: none; }
+
+.f-head { display: flex; align-items: center; gap: 0.6em; }
+.f-logo { width: 3.1em; height: 3.1em; }
+.f-name { font-size: 2.45em; font-weight: 700; line-height: 1.05; color: var(--green); letter-spacing: -0.01em; }
+
+.f-title { font-size: 2.1em; line-height: 1.1; letter-spacing: -0.015em; margin-top: 0.5em; text-wrap: balance; }
+.f-lede { font-size: 1.2em; margin-top: 0.45em; }
+
+.f-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 1.1em;
+  margin-top: 1em;
+}
+.sheet h2 { font-size: 1.3em; color: var(--green); margin-bottom: 0.35em; }
+.f-list li { display: flex; align-items: flex-start; gap: 0.5em; padding: 0.2em 0; font-size: 1.05em; }
+.f-list svg { width: 1.3em; height: 1.3em; flex: none; color: var(--green); }
+
+.f-facts {
+  border: 2px solid var(--line);
+  border-radius: 0.8em;
+  padding: 0.75em 1em;
+}
+.f-facts li { padding: 0.18em 0; }
+
+.f-when {
+  margin-top: 1em;
+  border: 2.5px solid var(--green);
+  border-radius: 0.8em;
+  padding: 0.75em 1em 0.9em;
+  margin-bottom: 1em;
+}
+.f-when-title { font-size: 1.35em; font-weight: 700; }
+.f-blanks { display: flex; flex-wrap: wrap; gap: 0.7em 1.5em; margin-top: 0.6em; }
+.f-blanks span { display: flex; align-items: flex-end; gap: 0.4em; flex: 1 1 35%; font-weight: 700; }
+.f-blanks .f-wide { flex-basis: 100%; }
+.f-blanks i { flex: 1; min-width: 4em; height: 1.3em; border-bottom: 2px solid var(--ink); }
+
+.f-scan {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+  margin-top: auto;
+  padding-top: 0.9em;
+  border-top: 2px solid var(--line);
+}
+.f-qr { width: 2in; height: 2in; flex: none; }
+.f-scan-title { font-size: 1.25em; font-weight: 700; line-height: 1.25; }
+.f-url { font-size: 1.35em; font-weight: 700; color: var(--green); margin-top: 0.3em; overflow-wrap: anywhere; }
+.f-contact { margin-top: 0.6em; }
+
+.f-foot { margin-top: 0.8em; font-size: 0.95em; color: var(--ink-soft); }
+
+/* ---------- Small screens: let the preview reflow ---------- */
+
+@media screen and (max-width: 9in) {
+  .sheet {
+    width: auto;
+    height: auto;
+    margin: 16px;
+    padding: 24px 20px;
+    font-size: 15px;
+  }
+  .f-grid { grid-template-columns: 1fr; }
+  .f-scan { flex-direction: column; align-items: flex-start; margin-top: 1.5em; }
+  .f-qr { width: 10em; height: 10em; }
+}
+
+/* ---------- Print ---------- */
+
+@media print {
+  @page { size: letter; margin: 0; }
+  html, body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .toolbar { display: none; }
+  .sheet {
+    margin: 0;
+    width: 8.5in;
+    height: 10.98in;
+    box-shadow: none;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+}

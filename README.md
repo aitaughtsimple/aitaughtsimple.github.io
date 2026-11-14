@@ -49,6 +49,8 @@ python3 tools/make_qr.py
 
 Reprint any flyers after the address changes. Old QR codes will point to the old address.
 
+**Cache note.** Pages load `config.js`, `site.js`, and the stylesheets with a `?v=...` tag. After changing any of those files, bump the tag in the HTML files (any new value works, for example the latest commit id) so visitors get the new version right away instead of a saved older copy.
+
 ## Printing the flyer
 
 Open `/flyer/`, press **Print this flyer**, and choose US Letter. If the browser adds a web address or date in the corners, turn off "Headers and footers" in the print window. The "Date / Time / Place" lines are for writing in details by hand for a specific class.

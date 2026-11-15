@@ -684,6 +684,34 @@ fieldset.field { border: 0; padding: 0; min-width: 0; }
 .qscore { margin: 1.75rem 0 0; font-weight: 700; font-size: 1.15em; }
 .qscore:empty { display: none; }
 
+/* "Think you've been scammed?" box under the quiz */
+.helpbox { margin-top: clamp(2rem, 1.5rem + 2vw, 3rem); padding: clamp(1.25rem, 1rem + 1.2vw, 2.1rem); background: var(--note); border-radius: var(--r-lg); max-width: 54rem; }
+.helpbox h3 { font-size: 1.3em; }
+.helpbox ol { margin: 0 0 1rem; padding-left: 1.4em; }
+.helpbox li { margin-bottom: 0.55em; max-width: none; }
+.helpbox p { margin: 0; max-width: none; }
+.helpbox a { color: var(--green-deep); font-weight: 700; }
+
+/* ---------- Safety promise ---------- */
+
+.section--promise { padding-top: 0; }
+.promise { display: grid; gap: 1rem; margin: 0; padding: 0; list-style: none; }
+@media (min-width: 48em) { .promise { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 70em) { .promise { grid-template-columns: repeat(3, 1fr); } }
+.promise li { display: flex; gap: 0.9rem; align-items: flex-start; max-width: none; padding: 1.25rem 1.35rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); box-shadow: var(--shadow-sm); }
+.promise svg { width: 1.8em; height: 1.8em; flex: none; color: var(--green); }
+.promise h3 { font-size: 1.15em; margin: 0.15em 0 0.35em; }
+.promise p { margin: 0; }
+
+/* ---------- Sources list (curriculum) ---------- */
+
+.lesson-tip { margin: 0.75rem 0 0; color: var(--ink-soft); font-size: 0.95em; }
+.sources-block { margin-top: clamp(2.5rem, 2rem + 2vw, 4rem); padding-top: 2rem; border-top: 2px solid var(--line); }
+.sources-block h3 { font-size: 1.35em; }
+.sources { margin: 0; padding-left: 1.3em; }
+.sources li { margin-bottom: 0.5em; }
+.checked-note { margin-top: 1.25rem; color: var(--ink-soft); }
+
 /* ---------- Footer ---------- */
 
 .site-footer { background: var(--ink); color: #fff; padding-block: 3.25rem; }

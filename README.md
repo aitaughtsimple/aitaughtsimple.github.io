@@ -29,7 +29,7 @@ Plain HTML and CSS with a little JavaScript. No framework, no build step. GitHub
 
 **Edit the About section.** In `index.html`, find `<!-- 5. About us -->`. The two paragraphs and the two name cards (Jaiden, Shubh) are plain text you can change.
 
-**Edit the quiz.** In `index.html`, find `<!-- 3b. Real or scam quiz -->`. Each card has `data-answer="scam"` or `data-answer="real"`, the message, and the explanation.
+**Edit the quiz.** In `index.html`, find `<!-- 3b. Real or scam quiz -->`. Each card has `data-answer="scam"` or `data-answer="real"`, the message, and the explanation. Keep about half the cards real, and don't let the answers fall into an obvious pattern.
 
 **Text size buttons.** The A / A+ / A++ bar at the top of the home and curriculum pages remembers each visitor's choice on their device.
 
@@ -65,4 +65,5 @@ Open `/flyer/`, press **Print this flyer**, and choose US Letter. If the browser
 
 - No made-up stats, testimonials, partner logos, or partnership claims.
 - No phone numbers or home addresses. First names only.
+- Sample scam links use the reserved `.example` ending (for example `usps-redeliver-help.example`), so nobody can land on a real scam site by typing one. Every safety fact links to an official source on the curriculum page; re-check them before printing.
 - Text and background colors meet WCAG AAA contrast (7:1 or better). Body text is 19 to 20px. Buttons are at least 48px tall.

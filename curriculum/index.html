@@ -19,8 +19,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap">
-  <link rel="stylesheet" href="../assets/styles.css?v=261115">
-  <script src="../config.js?v=261115"></script>
+  <link rel="stylesheet" href="../assets/styles.css?v=261115c">
+  <script src="../config.js?v=261115c"></script>
   <script>try{var t=localStorage.getItem("ats-text");if(t)document.documentElement.style.fontSize=t;}catch(e){}</script>
 </head>
 <body>
@@ -94,6 +94,11 @@
           <h2 id="plan-title">How we plan each class</h2>
           <p>Every class follows the same calm rhythm, and most of the time is hands-on. Hosts can shorten it to 45 minutes.</p>
         </div>
+        <figure class="hourbar">
+          <div class="hourbar-track" aria-hidden="true"><span style="--m:5;--c:var(--sky)">5</span><span style="--m:7;--c:var(--sun)">7</span><span style="--m:8;--c:var(--blush)">8</span><span class="is-hands" style="--m:25">25 min hands-on</span><span style="--m:7;--c:var(--mint)">7</span><span style="--m:8;--c:var(--sun)">8</span></div>
+          <ul class="hourbar-key" aria-hidden="true"><li><i style="--c:var(--sky)"></i>Welcome</li><li><i style="--c:var(--sun)"></i>First message</li><li><i style="--c:var(--blush)"></i>One example</li><li><i class="is-hands"></i>Hands-on practice</li><li><i style="--c:var(--mint)"></i>Safety minute</li><li><i style="--c:var(--sun)"></i>Show what you learned</li></ul>
+          <figcaption>Where the hour goes: 25 of the 60 minutes are hands-on practice on your own phone.</figcaption>
+        </figure>
         <ol class="timeline">
           <li><span class="tl-time">Early<span class="tl-len">10 min</span></span><div><h3>Help at the door</h3><p>Come a few minutes early for help getting on the wifi and making the text on your phone bigger.</p></div></li>
           <li><span class="tl-time">0:00<span class="tl-len">5 min</span></span><div><h3>Welcome and today's plan</h3><p>We say hello, pair each person with a student helper, and share one rule: never type passwords, bank or card numbers, or your Social Security number into an AI chat. You can't break anything.</p></div></li>
@@ -113,6 +118,16 @@
           <h2 id="lessons-title">The six lessons</h2>
           <p>Lesson 1 comes first. After that, a host can pick any lesson, and lesson 5 is part of every series.</p>
         </div>
+        <nav class="lesson-path" aria-label="Jump to a lesson">
+          <ol>
+            <li><a href="#lesson-1"><span class="lp-dot" style="--c: var(--mint)"><svg aria-hidden="true"><use href="#i-chat"/></svg></span><span class="lp-num">Lesson 1</span><span class="lp-name">AI basics</span></a></li>
+            <li><a href="#lesson-2"><span class="lp-dot" style="--c: var(--sun)"><svg aria-hidden="true"><use href="#i-mail"/></svg></span><span class="lp-num">Lesson 2</span><span class="lp-name">Emails and letters</span></a></li>
+            <li><a href="#lesson-3"><span class="lp-dot" style="--c: var(--sky)"><svg aria-hidden="true"><use href="#i-bulb"/></svg></span><span class="lp-num">Lesson 3</span><span class="lp-name">Quick answers</span></a></li>
+            <li><a href="#lesson-4"><span class="lp-dot" style="--c: var(--blush)"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><span class="lp-num">Lesson 4</span><span class="lp-name">Trips and meals</span></a></li>
+            <li><a href="#lesson-5"><span class="lp-dot" style="--c: var(--sun)"><svg aria-hidden="true"><use href="#i-shield"/></svg></span><span class="lp-num">Lesson 5</span><span class="lp-name">Spot AI scams</span><span class="lp-tag">In every series</span></a></li>
+            <li><a href="#lesson-6"><span class="lp-dot" style="--c: var(--sky)"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><span class="lp-num">Lesson 6</span><span class="lp-name">Keep info safe</span></a></li>
+          </ol>
+        </nav>
         <ol class="lessons">
 
           <li class="lesson" id="lesson-1">
@@ -282,6 +297,6 @@
     </div>
   </footer>
 
-  <script src="../assets/site.js?v=261115" defer></script>
+  <script src="../assets/site.js?v=261115c" defer></script>
 </body>
 </html>

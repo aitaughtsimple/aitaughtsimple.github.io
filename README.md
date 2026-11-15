@@ -18,6 +18,7 @@ Plain HTML and CSS with a little JavaScript. No framework, no build step. GitHub
 | `assets/flyer.css` | Flyer design and print settings (US letter, one sheet) |
 | `assets/site.js` | Fills pages with the values from `config.js`, builds email links, copy button |
 | `assets/qr.svg` | QR code pointing at the site (made locally by `tools/make_qr.py`) |
+| `assets/art/step-*.svg` | The three illustrations in "How a class works" (hand-made SVG, no stock photos) |
 | `assets/og-image.png` | Picture shown when the link is texted or emailed (made from `tools/og-card.html`) |
 | `curriculum/index.html` | The six-lesson curriculum and the 60-minute class plan |
 | `cheat-sheet/index.html` | One-page printable AI cheat sheet to hand out in class |

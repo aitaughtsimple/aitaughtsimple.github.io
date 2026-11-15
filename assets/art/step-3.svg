@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect x="30" y="22" width="260" height="150" rx="8" fill="#BFD7EA" transform="rotate(-2 160 97)"/>
+  <rect x="62" y="24" width="196" height="118" rx="10" fill="#1F2925"/>
+  <rect x="70" y="32" width="180" height="102" rx="5" fill="#fff"/>
+  <rect x="84" y="46" width="96" height="16" rx="8" fill="#F2EFE9"/>
+  <rect x="140" y="70" width="96" height="16" rx="8" fill="#1D5C4B"/>
+  <rect x="84" y="94" width="118" height="16" rx="8" fill="#F2EFE9"/>
+  <rect x="152" y="142" width="16" height="14" fill="#1F2925"/>
+  <rect x="124" y="154" width="72" height="7" rx="3.5" fill="#1F2925"/>
+  <!-- audience, seen from behind -->
+  <path d="M34 200 a32 26 0 0 1 64 0z" fill="#F4B4A6"/>
+  <circle cx="66" cy="168" r="15" fill="#DAD5CC"/>
+  <path d="M128 200 a32 26 0 0 1 64 0z" fill="#F6C453"/>
+  <circle cx="160" cy="166" r="15" fill="#2A211C"/>
+  <path d="M222 200 a32 26 0 0 1 64 0z" fill="#CFE6D8"/>
+  <circle cx="254" cy="168" r="15" fill="#6B4A33"/>
+  <!-- safety sticker -->
+  <g transform="rotate(12 276 46)">
+    <circle cx="276" cy="46" r="24" fill="#fff"/>
+    <path d="M276 30 l13 5 v9 c0 9-5.5 15-13 17.5 c-7.5-2.5-13-8.5-13-17.5 v-9z" fill="#CFE6D8" stroke="#1D5C4B" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M270 45 l4.5 4.5 l8-8.5" fill="none" stroke="#1D5C4B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <path d="M44 40 l3.5 9 l9 3.5 l-9 3.5 l-3.5 9 l-3.5 -9 l-9 -3.5 l9 -3.5z" fill="#1F2925"/>
+</svg>

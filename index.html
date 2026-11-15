@@ -38,8 +38,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap">
-  <link rel="stylesheet" href="assets/styles.css?v=261115">
-  <script src="config.js?v=261115"></script>
+  <link rel="stylesheet" href="assets/styles.css?v=261115c">
+  <script src="config.js?v=261115c"></script>
   <script>try{var t=localStorage.getItem("ats-text");if(t)document.documentElement.style.fontSize=t;}catch(e){}</script>
 </head>
 <body>
@@ -198,6 +198,7 @@
           <li class="step">
             <span class="step-num" aria-hidden="true">1</span>
             <div>
+              <img class="step-art" src="assets/art/step-1.svg" alt="Illustration: Two phones, an iPhone and an Android" width="320" height="200" loading="lazy">
               <h3>Bring your phone</h3>
               <p>iPhone or Android. Come as you are. No experience needed, and no laptop.</p>
             </div>
@@ -205,6 +206,7 @@
           <li class="step">
             <span class="step-num" aria-hidden="true">2</span>
             <div>
+              <img class="step-art" src="assets/art/step-2.svg" alt="Illustration: A student helper sits beside an older adult who is typing on a phone" width="320" height="200" loading="lazy">
               <h3>Send your first message</h3>
               <p>In the first few minutes, a student helper sits with you while you ask the AI your very first question. You can't break anything.</p>
             </div>
@@ -212,6 +214,7 @@
           <li class="step">
             <span class="step-num" aria-hidden="true">3</span>
             <div>
+              <img class="step-art" src="assets/art/step-3.svg" alt="Illustration: A class watching one example on a big screen" width="320" height="200" loading="lazy">
               <h3>Practice what matters to you</h3>
               <p>We show one task slowly on the big screen. Then you try it yourself, at your own pace, and finish with a quick scam-spotting practice.</p>
             </div>
@@ -249,7 +252,10 @@
         <ol class="quiz" data-quiz>
           <li class="qcard" data-answer="scam">
             <p class="qkind"><svg aria-hidden="true"><use href="#i-chat"/></svg>Text message</p>
-            <blockquote class="qmsg">USPS: Your package can't be delivered because of an incomplete address. Update it within 24 hours: usps-redeliver-help.example</blockquote>
+            <div class="mock mock--sms">
+              <p class="mock-bar" aria-hidden="true">Text Message · Today 9:41 AM</p>
+              <blockquote class="qmsg">USPS: Your package can't be delivered because of an incomplete address. Update it within 24 hours: <span class="mock-link">usps-redeliver-help.example</span></blockquote>
+            </div>
             <div class="qbtns" hidden>
               <button class="btn btn--secondary" type="button" data-guess="real">Looks real</button>
               <button class="btn btn--secondary" type="button" data-guess="scam">It's a scam</button>
@@ -261,7 +267,11 @@
           </li>
           <li class="qcard" data-answer="real">
             <p class="qkind"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email from your library</p>
-            <blockquote class="qmsg">"Reminder: The book you borrowed is due Friday. You can renew it in your library account." It has no links and asks for nothing.</blockquote>
+            <div class="mock mock--email">
+              <div class="mock-mailhead" aria-hidden="true"><span class="mock-avatar">L</span><span><strong>Your Library</strong><span class="mock-sub">Your book is due Friday</span></span></div>
+              <blockquote class="qmsg">Reminder: The book you borrowed is due Friday. You can renew it in your library account.</blockquote>
+            </div>
+            <p class="qctx">It has no links and asks for nothing.</p>
             <div class="qbtns" hidden>
               <button class="btn btn--secondary" type="button" data-guess="real">Looks real</button>
               <button class="btn btn--secondary" type="button" data-guess="scam">It's a scam</button>
@@ -273,7 +283,12 @@
           </li>
           <li class="qcard" data-answer="scam">
             <p class="qkind"><svg aria-hidden="true"><use href="#i-call"/></svg>Phone call</p>
-            <blockquote class="qmsg">A voice that sounds just like your grandson, crying: "Grandma, I'm in trouble. Please send $2,000 in gift cards, and don't tell Mom."</blockquote>
+            <p class="qctx">A voice that sounds just like your grandson, crying:</p>
+            <div class="mock mock--call">
+              <div class="mock-callhead" aria-hidden="true"><span class="mock-caller"><svg><use href="#i-call"/></svg></span><span class="mock-callname">Incoming call</span><span class="mock-callsub">mobile</span></div>
+              <blockquote class="qmsg">"Grandma, I'm in trouble. Please send $2,000 in gift cards, and don't tell Mom."</blockquote>
+              <div class="mock-callbtns" aria-hidden="true"><span class="mock-decline"><svg><use href="#i-call"/></svg></span><span class="mock-accept"><svg><use href="#i-call"/></svg></span></div>
+            </div>
             <div class="qbtns" hidden>
               <button class="btn btn--secondary" type="button" data-guess="real">Looks real</button>
               <button class="btn btn--secondary" type="button" data-guess="scam">It's a scam</button>
@@ -285,7 +300,14 @@
           </li>
           <li class="qcard" data-answer="scam">
             <p class="qkind"><svg aria-hidden="true"><use href="#i-screen"/></svg>Pop-up on your computer</p>
-            <blockquote class="qmsg">"WARNING! Your computer has a virus. Call Microsoft Support now at the number below. Do not turn off your computer."</blockquote>
+            <div class="mock mock--popup">
+              <div class="mock-browser" aria-hidden="true"><i></i><i></i><i></i><span class="mock-url"></span></div>
+              <div class="mock-alert">
+                <span class="mock-alert-icon" aria-hidden="true">!</span>
+                <blockquote class="qmsg">WARNING! Your computer has a virus. Call Microsoft Support now at the number below. Do not turn off your computer.</blockquote>
+                <span class="mock-alert-btn" aria-hidden="true">Call Support</span>
+              </div>
+            </div>
             <div class="qbtns" hidden>
               <button class="btn btn--secondary" type="button" data-guess="real">Looks real</button>
               <button class="btn btn--secondary" type="button" data-guess="scam">It's a scam</button>
@@ -297,7 +319,11 @@
           </li>
           <li class="qcard" data-answer="real">
             <p class="qkind"><svg aria-hidden="true"><use href="#i-chat"/></svg>Text message you asked for</p>
-            <blockquote class="qmsg">You just tapped "Text me a code" to sign in to your email. A few seconds later: "Your sign-in code is 482913. Don't share this code with anyone."</blockquote>
+            <p class="qctx">You just tapped "Text me a code" to sign in to your email. A few seconds later:</p>
+            <div class="mock mock--sms">
+              <p class="mock-bar" aria-hidden="true">Text Message · Today 9:41 AM</p>
+              <blockquote class="qmsg">Your sign-in code is 482913. Don't share this code with anyone.</blockquote>
+            </div>
             <div class="qbtns" hidden>
               <button class="btn btn--secondary" type="button" data-guess="real">Looks real</button>
               <button class="btn btn--secondary" type="button" data-guess="scam">It's a scam</button>
@@ -309,7 +335,11 @@
           </li>
           <li class="qcard" data-answer="real">
             <p class="qkind"><svg aria-hidden="true"><use href="#i-chat"/></svg>Text from your doctor's office</p>
-            <blockquote class="qmsg">"Reminder: You have an appointment on Tuesday at 10:30 AM. Reply C to confirm." You do have that appointment, and the text has no link.</blockquote>
+            <div class="mock mock--sms">
+              <p class="mock-bar" aria-hidden="true">Text Message · Today 9:41 AM</p>
+              <blockquote class="qmsg">Reminder: You have an appointment on Tuesday at 10:30 AM. Reply C to confirm.</blockquote>
+            </div>
+            <p class="qctx">You do have that appointment, and the text has no link.</p>
             <div class="qbtns" hidden>
               <button class="btn btn--secondary" type="button" data-guess="real">Looks real</button>
               <button class="btn btn--secondary" type="button" data-guess="scam">It's a scam</button>
@@ -321,7 +351,10 @@
           </li>
           <li class="qcard" data-answer="scam">
             <p class="qkind"><svg aria-hidden="true"><use href="#i-chat"/></svg>Text message</p>
-            <blockquote class="qmsg">"Unpaid toll: $6.99. Pay today to avoid a $50 late fee: ezpass-tollpay.example"</blockquote>
+            <div class="mock mock--sms">
+              <p class="mock-bar" aria-hidden="true">Text Message · Today 9:41 AM</p>
+              <blockquote class="qmsg">Unpaid toll: $6.99. Pay today to avoid a $50 late fee: <span class="mock-link">ezpass-tollpay.example</span></blockquote>
+            </div>
             <div class="qbtns" hidden>
               <button class="btn btn--secondary" type="button" data-guess="real">Looks real</button>
               <button class="btn btn--secondary" type="button" data-guess="scam">It's a scam</button>
@@ -333,7 +366,12 @@
           </li>
           <li class="qcard" data-answer="real">
             <p class="qkind"><svg aria-hidden="true"><use href="#i-chat"/></svg>In the ChatGPT app</p>
-            <blockquote class="qmsg">You ask for an easy dinner idea, and ChatGPT suggests a recipe. It doesn't ask you for anything personal.</blockquote>
+            <div class="mock mock--chat">
+              <p class="mock-bar" aria-hidden="true">ChatGPT</p>
+              <p class="mock-you"><span class="sr-only">You ask: </span>What's an easy dinner for two?</p>
+              <blockquote class="qmsg"><span class="sr-only">ChatGPT answers: </span>Try sheet-pan chicken with potatoes and green beans. It takes about 30 minutes, with one pan to wash.</blockquote>
+            </div>
+            <p class="qctx">It doesn't ask you for anything personal.</p>
             <div class="qbtns" hidden>
               <button class="btn btn--secondary" type="button" data-guess="real">Looks real</button>
               <button class="btn btn--secondary" type="button" data-guess="scam">It's a scam</button>
@@ -568,6 +606,6 @@
     </div>
   </footer>
 
-  <script src="assets/site.js?v=261115" defer></script>
+  <script src="assets/site.js?v=261115c" defer></script>
 </body>
 </html>

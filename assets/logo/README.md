@@ -1,40 +1,39 @@
 # AI Taught Simple logo
 
-A green rounded square holding a white chat bubble with an AI spark. The wordmark is Bricolage Grotesque ExtraBold, with "Simple" in green. The text in every file is converted to outlines, so the logo looks the same on any computer, printer, or app.
+A green chat bubble with a white check mark, sitting on a tilted square of yellow paper, the same cut-paper look as the website. The wordmark is Bricolage Grotesque ExtraBold with a yellow marker stroke behind "Simple". The text in every file is converted to outlines, so the logo looks the same on any computer, printer, or app.
 
 ## Which file to use
 
 | Where | File |
 |---|---|
-| Website, documents, flyers (light background) | `ats-logo-horizontal.svg` or `ats-logo-horizontal-2400.png` |
-| On the club green or another dark color | `ats-logo-horizontal-reversed.svg` or `ats-logo-horizontal-reversed-2400.png` |
-| Black-and-white printing | `ats-logo-horizontal-mono.svg` |
-| On a dark photo | `ats-logo-horizontal-white.svg` |
-| Square spaces: slide title, poster, sign | `ats-logo-stacked.svg` or `ats-logo-stacked-1600.png` (`-reversed` on dark) |
-| Profile picture (Gmail, Instagram, Google) | `ats-profile-1080.png` (full square, so circle crops still show the whole bubble) |
+| Main logo: website, documents, flyers, slides (light background) | `ats-logo-compact.svg` or `ats-logo-compact-2000.png` |
+| A wide, short space: email signature, letterhead, footer | `ats-logo-horizontal.svg` or `ats-logo-horizontal-2400.png` |
+| Square spaces: poster, sign, title slide | `ats-logo-stacked.svg` or `ats-logo-stacked-1600.png` |
+| On the club green or another dark color | any `-reversed` file (white text, no marker stroke) |
+| Black-and-white printing | `ats-logo-compact-gray.svg`, `ats-logo-horizontal-gray.svg`, `ats-icon-gray.svg` |
+| Profile picture (Gmail, Instagram, Google) | `ats-profile-1080.png` (full square on paper color, so circle crops keep the whole mark) |
 | App icon or small badge | `ats-icon.svg`, `ats-icon-512.png`, `ats-icon-1024.png` |
-| Icon in one color | `ats-icon-mono.svg` (dark) or `ats-icon-white.svg` (light on dark) |
 
-Use the SVG files when the program accepts them (Google Docs, Slides and Canva do). Use the PNGs everywhere else. The PNGs have transparent backgrounds.
+Use the SVG files when the program accepts them (Canva and most design tools do). Use the PNGs everywhere else, including Google Docs and Slides. The PNGs have transparent backgrounds.
 
 ## Colors
 
 | Name | Hex | Use |
 |---|---|---|
-| Club green | `#1D5C4B` | Icon, "Simple", buttons |
+| Club green | `#1D5C4B` | The bubble, buttons, links |
 | Ink | `#1F2925` | Wordmark, body text |
-| Sun | `#F6C453` | The small dot in the bubble, highlights. Never for text |
+| Sun | `#F6C453` | The paper square and the marker stroke. Never for text |
 | Paper | `#FBF7F0` | Page background |
-| White | `#FFFFFF` | Bubble, reversed text |
+| White | `#FFFFFF` | Check mark, reversed text |
 
 Fonts: Bricolage Grotesque for headings and the wordmark, Atkinson Hyperlegible Next for body text. Both are free on Google Fonts.
 
 ## Rules
 
 - Leave clear space around the logo equal to at least a quarter of the icon's height.
-- Smallest sizes: the horizontal logo 120 px wide on screen or 1 inch wide in print. The icon alone works down to 16 px.
-- Don't stretch, rotate, outline, shadow, or recolor it, and don't retype the name in another font.
-- On a busy photo, use the white version, or put the logo on a solid panel.
+- Smallest sizes: the compact logo 110 px wide on screen or 1 inch wide in print. The icon alone works down to 16 px.
+- Don't stretch, straighten the paper, outline, shadow, or recolor it, and don't retype the name in another font.
+- On a busy photo, put the logo on a solid paper or green panel.
 - The icon alone is fine where the name already appears nearby, such as a browser tab or app icon.
 
 ## Rebuilding the files
@@ -46,4 +45,4 @@ python3 -m venv .logo-venv && .logo-venv/bin/pip install fonttools uharfbuzz
 .logo-venv/bin/python tools/build_logo.py path/to/BricolageGrotesque.ttf assets/logo
 ```
 
-The PNGs were rendered from the SVGs with headless Chrome. `assets/icon.svg` (the website icon) is a copy of `ats-icon.svg`.
+The PNGs were rendered from the SVGs with headless Chrome. `assets/icon.svg` (the website icon) is a copy of `ats-icon.svg`. `tools/logo-board.html` shows the three directions that were considered.
